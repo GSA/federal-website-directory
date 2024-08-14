@@ -56,7 +56,7 @@ Important requirements when updating the directory file:
 
 For individual additions or subtractions, it may be easiest to [directly editing the file](https://github.com/GSA/federal-website-directory/edit/main/us-government-website-directory.csv) (be sure to maintain the alphabetical order (of first Agency, then Bureau, then Website).  However, if an agency has many changes to make, they can also download the directory by [saving this file](https://github.com/GSA/federal-website-directory/raw/main/us-government-website-directory.csv); open it in a spreadsheet program such as Excel or Sheets; make the necessary edits; and save and re-export the file as a CSV file.  At that point, the hosted version can be either overwritten or the new CSV can be opened with a text editor and the contents copied and pasted when editing the file  in the browser.  
 
-**It is very important to maintain the alphabetical order of the file though.  Any proposed edits that do not maintain it may not be merged, and any commits that are out of order may be updated by the Site Scanning team in order to reorder the file.  **
+**It is very important to maintain the alphabetical order of the file though.  Any proposed edits that do not maintain it may not be merged, and any commits that are out of order may be updated by the Site Scanning team in order to reorder the file.**
 
 ## How to Get Help...
 
