@@ -11,10 +11,14 @@ The Federal Website Directory is a comprehensive list of the public-facing websi
 For the purpose of this directory: 
 - "Public-facing” means intended to be accessed and used by a member of the public or a customer, as opposed to a site which is intended to be accessed and used only by current Federal Government employees or contractors on behalf of an agency.
 - “Website” means a group of globally accessible interlinked web pages under a unique host name that is accessible using a web browser.
+- Even if a website requires a user to log in, in which sense it is not accessible to the general public, it could still be public-facing if it is intended to be used by general public (such as online accounts for government services or benefits).
+- Likewise, even if a website is accessible by the general public, it might not be intended for use by the general public (such as in the case of some beta or staging websites) and thus would not be public-facing.
+- A website that is primarily used by federal employees or contractors but that is accessible to the public may be public-facing if the website content is of significant public value (e.g., for transparency purposes). Agencies must make this determination on a case-by-case basis.
+
 
 
 #### Examples of what should be included:  
-- Redirects that resolve to public websites
+- Redirects that are at the sub-domain/domain level should be included
 - Sites that are mostly behind logins but which are used by members of the public
 - Public websites on any top level domain (not just .gov or .mil, but any .com/.org/etc. operated by the agency).
 - Archived websites, if still publicly accessible
