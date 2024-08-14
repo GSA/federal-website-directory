@@ -34,7 +34,7 @@ For the purpose of this directory:
 - Infrastructure-only domains (e.g. www2.x.gov)
 - Admin panels used only by current agency staff or contractors
 - Collaboration sites used only by current agency staff or contractors
-- Dead or deprecated websites, if the URL no longer resolves to a live site
+- Dead or deprecated websites, once the URL no longer resolves to a live site
 - Software as a service sites (e.g. agency.sharepoint.com)
 - Social media websites 
 
@@ -52,7 +52,11 @@ Important requirements when updating the directory file:
 - The Website field should not contain a protocol (e.g. https://), port (e.g. :8080), or path (e.g. /anything).  In other words, it should only contain subdomains, root domains, and the top level domain (e.g. `x.y.gov`).
 - Furthermore, `www.` should not be included for any website.  https://www.x.gov should be represented as `x.gov` and https://www.x.y.gov should be represented as `x.y.gov` in the Website field.  
 - The Agency and Bureau names should be pulled from and match exactly those in XXXXXXX file.
-- The Subcomponent field is optional and should express which office or sub-bureau component operates a website. There is not a source file that specifies what those should be, but the spelling and capitalization should be consistent across an agency's entries.  
+- The Subcomponent field is optional and should express which office or sub-bureau component operates a website. There is not a source file that specifies what those should be, but the spelling and capitalization should be consistent across an agency's entries.
+
+For individual additions or subtractions, it may be easiest to [directly editing the file](https://github.com/GSA/federal-website-directory/edit/main/us-government-website-directory.csv) (be sure to maintain the alphabetical order (of first Agency, then Bureau, then Website).  However, if an agency has many changes to make, they can also download the directory by [saving this file](https://github.com/GSA/federal-website-directory/raw/main/us-government-website-directory.csv); open it in a spreadsheet program such as Excel or Sheets; make the necessary edits; and save and re-export the file as a CSV file.  At that point, the hosted version can be either overwritten or the new CSV can be opened with a text editor and the contents copied and pasted when editing the file  in the browser.  
+
+**It is very important to maintain the alphabetical order of the file though.  Any proposed edits that do not maintain it may not be merged, and any commits that are out of order may be updated by the Site Scanning team in order to reorder the file.  **
 
 ## How to Get Help...
 
