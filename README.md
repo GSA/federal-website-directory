@@ -55,6 +55,11 @@ This Directory is overseen by the [Site Scanning program](https://digital.gov/si
 
 Agencies should email the Site Scanning team to request changes or updates to who from their agency should have access to update this directory.  
 
+## Why is this directory necessary?  
+
+- There is no central catalog of all federal websites that can point to which all websites the government operates for public use.  This directory provides that.
+- This directory provides another important service, answering not just which agency, but which bureau and subcomponent administers which website.  The [.gov registry that is published by CISA](https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv) can only provide that information for an entire base domain and does not have fidelity at the subdomain level.  
+
 ## Helpful Links
 - [Website directory file made interative via Flat GitHub](https://flatgithub.com/GSA/federal-website-directory/blob/main/us-government-website-directory.csv)
 - [Website directory file via GitHub.dev](https://github.dev/GSA/federal-website-directory/blob/main/us-government-website-directory.csv)
