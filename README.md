@@ -47,7 +47,8 @@ Important requirements when updating the directory file:
 - The file should be sorted alphabetically by Agency then Bureau then Website.
 - The Website field should not contain a protocol (e.g. https://), port (e.g. :8080), or path (e.g. /anything).  In other words, it should only contain subdomains, root domains, and the top level domain (e.g. `x.y.gov`).
 - Furthermore, `www.` should not be included for any website.  https://www.x.gov should be represented as `x.gov` and https://www.x.y.gov should be represented as `x.y.gov` in the Website field.  
-- The Agency and Bureau names should be pulled from and match exactly those in XXXXXXX file.  
+- The Agency and Bureau names should be pulled from and match exactly those in XXXXXXX file.
+- The Subcomponent field is optional and should express which office or sub-bureau component operates a website. There is not a source file that specifies what those should be, but the spelling and capitalization should be consistent across an agency's entries.  
 
 ## How to Get Help...
 
