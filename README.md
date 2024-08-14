@@ -49,10 +49,11 @@ Important requirements when updating the directory file:
 - Furthermore, `www.` should not be included for any website.  https://www.x.gov should be represented as `x.gov` and https://www.x.y.gov should be represented as `x.y.gov` in the Website field.  
 - The Agency and Bureau names should be pulled from and match exactly those in XXXXXXX file.  
 
-
 ## How to Get Help...
 
 This Directory is overseen by the [Site Scanning program](https://digital.gov/site-scanning) at GSA.  You can contact them anytime at [site-scanning@gsa.gov](mailto:site-scanning@gsa.gov)
+
+Agencies should email the Site Scanning team to request changes or updates to who from their agency should have access to update this directory.  
 
 ## Helpful Links
 - [Website directory file made interative via Flat GitHub](https://flatgithub.com/GSA/federal-website-directory/blob/main/us-government-website-directory.csv)
