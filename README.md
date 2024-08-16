@@ -15,7 +15,7 @@ For the purpose of this directory:
 - Likewise, even if a website is accessible by the general public, it might not be intended for use by the general public (such as in the case of some beta or staging websites) and thus would not be public-facing.
 - A website that is primarily used by federal employees or contractors but that is accessible to the public may be public-facing if the website content is of significant public value (e.g., for transparency purposes). Agencies must make this determination on a case-by-case basis.
 
-
+The directory is maintained by an automated harvester that first gathers [each of the individual agency website inventory files](https://github.com/GSA/federal-website-directory/blob/main/builder/website_inventories.csv), creates [a snapshot of each agency file](https://github.com/GSA/federal-website-directory/tree/main/snapshots), and then combines them into [one combined directory](https://github.com/GSA/federal-website-directory/blob/main/us-government-website-directory.csv).  
 
 #### Examples of what should be included:  
 - Redirects that are at the sub-domain/domain level should be included
@@ -39,30 +39,21 @@ For the purpose of this directory:
 - Social media websites 
 
 
-## Who should update the Website Directory...
+## How to update an agency's website directory...
 
-Most agencies have designated a digital experience lead as part of their implementation of OMB-23-22.  These agency points of contact [can be found here](https://community-dc.max.gov/display/OFCIO/M-23-22+Delivering+a+Digital-First+Public+Experience).  They, or their designated deputy, will be given edit access to this repository and will have the ability to either directly edit the directory file or approve changes suggested by someone else.  
+Each agency is required to host and keep up to date their public website inventory at `agency.gov/websites.csv` with the following specifications: 
 
-## How to update the Website Directory...
-
-Agency points of contact are able to update the directory by [directly editing the file here](https://github.com/GSA/federal-website-directory/edit/main/us-government-website-directory.csv) or by merging a pull request that proposes changes.  
-
-Important requirements when updating the directory file: 
-- The file should be sorted alphabetically by Agency then Bureau then Website.
-- The Website field should not contain a protocol (e.g. https://), port (e.g. :8080), or path (e.g. /anything).  In other words, it should only contain subdomains, root domains, and the top level domain (e.g. `x.y.gov`).
+- The inventory file must follow the schema demonstrated with [this example file](https://github.com/GSA/federal-website-directory/blob/main/builder/example.csv).
+- The `website` field should not contain a protocol (e.g. https://), port (e.g. :8080), or path (e.g. /anything).  In other words, it should only contain subdomains, root domains, and the top level domain (e.g. `x.y.gov`).
 - Furthermore, `www.` should not be included for any website.  https://www.x.gov should be represented as `x.gov` and https://www.x.y.gov should be represented as `x.y.gov` in the Website field.  
-- The Agency and Bureau names should be pulled from and match exactly those in XXXXXXX file.
-- The Subcomponent field is optional and should express which office or sub-bureau component operates a website. There is not a source file that specifies what those should be, but the spelling and capitalization should be consistent across an agency's entries.
+- The `agency` and `bureau` names should be pulled from and match exactly those in XXXXXXX file.
+- The `subcomponent` field is optional and should express which office or sub-bureau component operates a website. There is not a source file that specifies what those should be, but the spelling and capitalization should be consistent across an agency's entries.
+- The inventory file should be kept up to date with what is currently live on the public internet.  Planned but not yet live sites should not be included.  Sites that are scheduled for but have not yet been decomissioned should remain.  When sites go live or are turned off, they should then be added or removed from the inventory file.  
 
-For individual additions or subtractions, it may be easiest to [directly editing the file](https://github.com/GSA/federal-website-directory/edit/main/us-government-website-directory.csv) (be sure to maintain the alphabetical order (of first Agency, then Bureau, then Website).  However, if an agency has many changes to make, they can also download the directory by [saving this file](https://github.com/GSA/federal-website-directory/raw/main/us-government-website-directory.csv); open it in a spreadsheet program such as Excel or Sheets; make the necessary edits; and save and re-export the file as a CSV file.  At that point, the hosted version can be either overwritten or the new CSV can be opened with a text editor and the contents copied and pasted when editing the file  in the browser.  
-
-**It is very important to maintain the alphabetical order of the file though.  Any proposed edits that do not maintain it may not be merged, and any commits that are out of order may be updated by the Site Scanning team in order to reorder the file.**
 
 ## How to Get Help...
 
 This Directory is overseen by the [Site Scanning program](https://digital.gov/site-scanning) at GSA.  You can contact them anytime at [site-scanning@gsa.gov](mailto:site-scanning@gsa.gov)
-
-Agencies should email the Site Scanning team to request changes or updates to who from their agency should have access to update this directory.  
 
 ## Why is this directory necessary?  
 
