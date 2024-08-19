@@ -48,7 +48,8 @@ Each agency is required to host and keep up to date their public website invento
 - Furthermore, `www.` should not be included for any website.  https://www.x.gov should be represented as `x.gov` and https://www.x.y.gov should be represented as `x.y.gov` in the Website field.  
 - The `agency` and `bureau` names should be pulled from and match exactly those in XXXXXXX file.
 - The `subcomponent` field is optional and should express which office or sub-bureau component operates a website. There is not a source file that specifies what those should be, but the spelling and capitalization should be consistent across an agency's entries.
-- The inventory file should be kept up to date with what is currently live on the public internet.  Planned but not yet live sites should not be included.  Sites that are scheduled for but have not yet been decomissioned should remain.  When sites go live or are turned off, they should then be added or removed from the inventory file.  
+- The inventory file should be kept up to date with what is currently live on the public internet.  Planned but not yet live sites should not be included.  Sites that are scheduled for but have not yet been decomissioned should remain.  When sites go live or are turned off, they should then be added or removed from the inventory file.
+- agency.gov/websites.csv can redirect to a final URL, but the file must resolve when https://agency.gov/websites.csv is loaded into a browser.  
 
 This model is [similar to other reporting requirements](https://github.com/GSA/site-scanning/issues/1104) and attempts to be straightforward for agencies to manage however works best for them.  
 
