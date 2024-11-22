@@ -22,7 +22,7 @@ For the purpose of this directory:
 #### Examples of what should be included:  
 - Sites that are mostly behind logins but that are nonetheless public-facing. 
 - Public-facing websites on the .gov and .mil top level domains only.
-- Archived websites, if still public-facing.
+- Archived or scheduled-to-be-decommissioned websites, if still public-facing.
 - Sites that resolve to a human-readable 'document' (e.g. HTML, TXT, PDF).
 
 #### Examples of what should be excluded: 
