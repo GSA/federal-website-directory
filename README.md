@@ -11,6 +11,10 @@ The Federal Website Directory is a comprehensive list of the public-facing websi
 For the purpose of this directory: 
 - "Public-facing” means intended to be accessed and used by a member of the public or a customer, as opposed to a site which is intended to be accessed and used only by current Federal Government employees or contractors on behalf of an agency.
 - “Website” means a group of globally accessible interlinked web pages under a unique host name that is accessible using a web browser.
+  - The website should be listed (and should load properly) without “www.”
+  - The website should be listed without any page paths (such as “/program/page1” or "/index.html").
+  - The website should be listed without a protocol (such as "https://"). 
+  - For example, “agency.gov” and “program.agency.gov” are proper acceptable URL structures for websites in this directory.
 - Even if a website requires a user to log in, in which sense it is not accessible to the general public, it could still be public-facing if it is intended to be used by general public (such as online accounts for government services or benefits).
 - Likewise, even if a website is accessible by the general public, it might not be intended for use by the general public (such as in the case of some beta or staging websites) and thus would not be public-facing.
 - A website that is primarily used by federal employees or contractors but that is accessible to the public may be public-facing if the website content is of significant public value (e.g., for transparency purposes). Agencies must make this determination on a case-by-case basis.
@@ -18,23 +22,23 @@ For the purpose of this directory:
 The directory is maintained by an automated harvester that first gathers [each of the individual agency website inventory files](https://github.com/GSA/federal-website-directory/blob/future-prototype/builder/website_inventories.csv), creates [a snapshot of each agency file](https://github.com/GSA/federal-website-directory/tree/future-prototype/snapshots), and then combines them into [one combined directory](https://github.com/GSA/federal-website-directory/blob/future-prototype/us-government-website-directory.csv).  
 
 #### Examples of what should be included:  
-- Redirects that are at the sub-domain/domain level should be included
-- Sites that are mostly behind logins but which are used by members of the public
-- Public websites on any top level domain (not just .gov or .mil, but any .com/.org/etc. operated by the agency).
-- Archived websites, if still publicly accessible
-- Sites that resolve to a human-readable 'document' (e.g. HTML, TXT, PDF)
+- Sites that are mostly behind logins but that are nonetheless public-facing. 
+- Public-facing websites on the .gov and .mil top level domains only.
+- Archived or scheduled-to-be-decommissioned websites, if still public-facing.
+- Sites that resolve to a human-readable 'document' (e.g. HTML, TXT, PDF).
 
 #### Examples of what should be excluded: 
+- Redirects should not be included; instead, provide the final URL website that the target URL redirects to
+- Dead or deprecated websites, including former public-facing websites that now redirect elsewhere
 - API endpoints
 - Sites that resolve to a machine-readable 'data file' (e.g. XML, JSON, CSV)
 - FTP servers
 - Mail servers
-- Staging or development sites
+- Staging or development sites that are not public-facing
 - Website assets
 - Infrastructure-only domains (e.g. www2.x.gov)
-- Admin panels used only by current agency staff or contractors
-- Collaboration sites used only by current agency staff or contractors
-- Dead or deprecated websites, once the URL no longer resolves to a live site
+- Admin panels that are not public-facing
+- Collaboration sites that are not public-facing
 - Software as a service sites (e.g. agency.sharepoint.com)
 - Social media websites 
 
