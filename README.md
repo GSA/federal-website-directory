@@ -58,10 +58,10 @@ Each agency is required to host and keep up to date their public website invento
 This model is [similar to other reporting requirements](https://github.com/GSA/site-scanning/issues/1104) and attempts to be straightforward for agencies to manage however works best for them.  
 
 #### Quick Links
-- Where to find an agency's website inventory.
-- The guidelines to follow for what should go in a website inventory.
-- A report suggesting sites that agencies may want to add to their inventories (live, have DAP, don't redirect, and not being filtered as likely non-public sites).
-- A report suggesting sites that agencies may want to remove from their inventories (Redirects or has a 4xx, 5xx status code).
+- [Where to find an agency's website inventory](https://github.com/GSA/federal-website-directory/blob/future-prototype/builder/website_inventories.csv).
+- [The guidelines to follow for what should go in a website inventory](https://github.com/GSA/federal-website-directory/tree/future-prototype?tab=readme-ov-file).
+- [A report suggesting sites that agencies may want to add to their inventories](https://github.com/GSA/federal-website-directory/blob/future-prototype/reports/candidate_for_addition.csv) (live, have DAP, don't redirect, and not being filtered as likely non-public sites).
+- [A report suggesting sites that agencies may want to remove from their inventories](https://github.com/GSA/federal-website-directory/blob/future-prototype/reports/candidates_for_removal.csv) (Redirects or has a 4xx, 5xx status code).
 
 ## How to Get Help...
 
