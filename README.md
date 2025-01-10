@@ -1,6 +1,4 @@
-# Under Construction
-
-_[Draft documentation]_
+# Under Construction - Draft
 
 This repository is a prototype website directory for the U.S. Federal Government.  The [directory file](https://github.com/GSA/federal-website-directory/blob/main/us-government-website-directory.csv) can be [downloaded directly here](https://github.com/GSA/federal-website-directory/raw/main/us-government-website-directory.csv).  
 
