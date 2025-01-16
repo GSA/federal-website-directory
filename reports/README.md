@@ -5,6 +5,7 @@ This folder contains automatically generated reports that flag websites that age
 
 
 - Is in the Public Website Inventory
+- Is Executive Branch
 - Has a filter flag
   - Or has a final_url_same_website=false 
   - Or has status code = 4xx,5xx
@@ -13,6 +14,7 @@ This folder contains automatically generated reports that flag websites that age
 
 
 - Is not in the Public Website Inventory
+- Is Executive Branch
 - Does not have a filter flag
 - Has a status code = 2xx
 - Has dap=true
