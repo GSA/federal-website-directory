@@ -9,7 +9,7 @@ The Federal Website Directory is a comprehensive list of the public-facing websi
 For the purpose of this directory: 
 - "Public-facing” means intended to be accessed and used by a member of the public or a customer, as opposed to a site which is intended to be accessed and used only by current Federal Government employees or contractors on behalf of an agency.
 - “Website” means a group of globally accessible interlinked web pages under a unique host name that is accessible using a web browser.
-  - The website should be listed (and should load properly) without “www.”
+  - The website should be listed (and should load properly) without `www.`
   - The website should be listed without any page paths (such as “/program/page1” or "/index.html").
   - The website should be listed without a protocol (such as "https://"). 
   - For example, “agency.gov” and “program.agency.gov” are proper acceptable URL structures for websites in this directory.
