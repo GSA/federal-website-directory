@@ -7,7 +7,7 @@ This folder contains automatically generated reports that flag websites that age
 - Is in the Public Website Inventory
 - Is Executive Branch
 - Has a filter flag
-  - Or has a final_url_same_website=false 
+  - Or redirect=TRUE
   - Or has status code = 4xx,5xx
 
 [Candidates for Addition](https://github.com/GSA/federal-website-directory/blob/main/reports/candidate_for_addition.csv):
