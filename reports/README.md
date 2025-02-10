@@ -10,7 +10,7 @@ This folder contains automatically generated reports that flag websites that age
   - Or redirects (redirect=TRUE)
   - Or is down (status code = 4xx or 5xx)
 
-[Candidates for Addition](https://github.com/GSA/federal-website-directory/blob/main/reports/candidate_for_addition.csv):
+[Candidates for Addition](https://github.com/GSA/federal-website-directory/blob/main/reports/candidates_for_addition.csv):
 
 
 - Is not in the Public Website Inventory (source does not contain `omb_idea`)
