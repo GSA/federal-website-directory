@@ -39,14 +39,6 @@ For the purpose of this directory:
 - Social media websites 
 
 
-## How to update an agency's website directory...
-
-...
-
-#### Quick Links
-- [A report suggesting sites that agencies may want to add to their inventories](https://github.com/GSA/federal-website-directory/blob/main/reports/candidates_for_addition.csv) (live, have DAP, don't redirect, and not being filtered as likely non-public sites).
-- [A report suggesting sites that agencies may want to remove from their inventories](https://github.com/GSA/federal-website-directory/blob/main/reports/candidates_for_removal.csv) (Redirects or has a 4xx, 5xx status code).
-
 ## How to Get Help...
 
 This Directory is overseen by the [Site Scanning program](https://digital.gov/site-scanning) at GSA.  You can contact them anytime at [site-scanning@gsa.gov](mailto:site-scanning@gsa.gov)
