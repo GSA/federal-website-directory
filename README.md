@@ -58,7 +58,7 @@ This model is [similar to other reporting requirements](https://github.com/GSA/s
 
 #### Quick Links
 - [Where to find an agency's website inventory](https://github.com/GSA/federal-website-directory/blob/main/builder/website_inventories.csv).
-- [The guidelines to follow for what should go in a website inventory](https://github.com/GSA/federal-website-directory/tree/future-prototype?tab=readme-ov-file).
+- [The guidelines to follow for what should go in a website inventory](https://github.com/GSA/federal-website-directory?tab=readme-ov-file).
 - [A report suggesting sites that agencies may want to add to their inventories](https://github.com/GSA/federal-website-directory/blob/main/reports/candidates_for_addition.csv) (live, have DAP, don't redirect, and not being filtered as likely non-public sites).
 - [A report suggesting sites that agencies may want to remove from their inventories](https://github.com/GSA/federal-website-directory/blob/main/reports/candidates_for_removal.csv) (Redirects or has a 4xx, 5xx status code).
 
