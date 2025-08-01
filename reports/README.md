@@ -6,7 +6,7 @@ This folder contains automatically generated reports that flag websites that age
 
 - Is in the Public Website Inventory (source contains `omb_idea`)
 - Is Executive Branch (branch=executive)
-- Has a filter flag (filter=TRUE
+- Has a filter flag (filter=TRUE)
   - Or redirects (redirect=TRUE)
   - Or is down (status code = 4xx or 5xx)
 
