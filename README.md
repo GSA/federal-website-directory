@@ -4,7 +4,7 @@ This repository is a prototype public website inventory for the U.S. Federal Gov
 
 ## Context for Pilot Program Participants
 
-Prior to launching this process for all agencies, select agencies have agreed to participate in a pilot program for it. The goals of this pilot program are to gather feedback on:
+Prior to launching a public website inventory process for all agencies, select agencies have agreed to participate in a pilot program for a potential version of it. The goals of this pilot program are to gather feedback on:
 - The instructions on GitHub for how to update and upload files containing agency websites and their organizational owners;
 - The reports on Github that help agencies identify websites to potentially add or remove from their list, and that help agencies understand which websites have problems that prevent successful scanning;
 - The process to update and upload files to the agency's principal website;
@@ -60,7 +60,6 @@ The inventory is maintained by an automated harvester that first gathers [each o
 - Software as a service sites (e.g. agency.sharepoint.com)
 - Social media websites 
 
-
 ## How to update an agency's website inventory...
 
 Each agency is required to host and keep up to date their public website inventory at `agency.gov/websites.csv` with the following specifications: 
@@ -80,7 +79,6 @@ This model is [similar to other reporting requirements](https://github.com/GSA/s
 - [The guidelines to follow for what should go in a website inventory](https://github.com/GSA/federal-website-directory?tab=readme-ov-file).
 - [A report suggesting sites that agencies may want to add to their inventories](https://github.com/GSA/federal-website-directory/blob/main/reports/candidates_for_addition.csv) (live, have DAP, don't redirect, and not being filtered as likely non-public sites).
 - [A report suggesting sites that agencies may want to remove from their inventories](https://github.com/GSA/federal-website-directory/blob/main/reports/candidates_for_removal.csv) (Redirects or has a 4xx, 5xx status code).
-
 
 ## How to Get Help...
 
