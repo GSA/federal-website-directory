@@ -6,7 +6,7 @@ This repository is a prototype public website inventory for the U.S. Federal Gov
 
 Prior to launching a public website inventory process for all agencies, select agencies have agreed to participate in a pilot program for a potential version of it. The goals of this pilot program are to gather feedback on:
 - The instructions on GitHub for how to update and upload files containing agency websites and their organizational owners;
-- The reports on Github that help agencies identify websites to potentially add or remove from their list, and that help agencies understand which websites have problems that prevent successful scanning;
+- The [reports](https://github.com/GSA/federal-website-directory/tree/main/reports) on Github that help agencies identify websites to potentially add or remove from their list, and that help agencies understand which websites have problems that prevent successful scanning;
 - The process to update and upload files to the agency's principal website;
 - The accuracy of the inventory produced by aggregating files uploaded to agencies' principal websites; and
 - The helpfulness of the inventory for managing your agency's web footprint and responding to data collections.
@@ -14,7 +14,7 @@ Prior to launching a public website inventory process for all agencies, select a
 ## Instructions for Pilot Program Participants
 
 - Wait for an email from OFCIO containing the list of websites for you to upload to your agency's principal website.
-- Review the reports on GitHub that list potential candidates for addition or removal from your list, and make changes to your list as appropriate. (Optional: Review the report containing websites with scanning problems, and reach out to website owners as appropriate.) Document your feedback on these reports.
+- Review the [reports](https://github.com/GSA/federal-website-directory/tree/main/reports) on GitHub that list potential candidates for addition or removal from your list, and make changes to your list as appropriate. (Optional: Review the report containing websites with scanning problems, and reach out to website owners as appropriate.) Document your feedback on these reports.
 - Follow the instructions on GitHub to upload the file to your agency's principal website, then email OFCIO to inform them that you are finished. Document your feedback on the instructions, as well as the process to update and upload the file.
 - Wait for an email from OFCIO informing you that the public website inventory has been updated based on uploads by the pilot program participants.
 - Review the public website inventory (filtered for your agency) for accuracy and helpfulness as part of your agency's overall efforts to manage its web footprint and respond to data calls. Document your feedback on the inventory's accuracy and helpfulness.
