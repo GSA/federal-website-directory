@@ -24,7 +24,10 @@ Prior to launching this process for all agencies, select agencies have agreed to
 The Public Website Inventory is a comprehensive list of the public-facing websites of the U.S. Federal Government, currently required for all CFO Act agencies and optional for the remaining agencies of the Executive branch. Each website must list its agency (top-tier entity) owner and bureau (second-tier entity) owner, with the option to include an office (third-tier entity) owner.
 
 For the purpose of this inventory: 
-- "Public-facing” means intended to be accessed and used by a member of the public or a customer, as opposed to a site which is intended to be accessed and used only by current Federal Government employees or contractors on behalf of an agency.
+- "Public-facing” means intended to be accessed and used by a member of the public or a customer, as opposed to a site which is intended to be accessed and used primarily by current Federal Government employees or contractors on behalf of an agency. Use the following steps to determine whether your website is public-facing:
+  - First, are the primary intended users Federal employees or contractors? If yes, the website is NOT public-facing. If no, continue to the next question.
+  - Second, are the primary intended users anyone, without restriction? If yes, the website IS public-facing. If no, then the primary intended users are part of some defined and restricted group, and you should continue to the next question.
+  - Third, are the primary intended users customers (i.e., someone receiving a benefit or service, or support to comply with a law or regulation)? If yes, the website IS public-facing. If no, the website is NOT public-facing. 
 - “Website” means a group of globally accessible interlinked web pages under a unique host name that is accessible using a web browser.
   - The website should be listed (and should load properly) without `www.`
   - The website should be listed without any page paths (such as “/program/page1” or "/index.html").
