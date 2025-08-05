@@ -20,8 +20,16 @@ This folder contains automatically generated reports that flag websites that age
 - Has DAP (dap=true)
 - Doesn't redirect (redirect does not equal TRUE)
 
+[Possible Scan Errors](https://github.com/GSA/federal-website-directory/blob/main/reports/scan_errors.csv)
+- suspected meta redirect = redirect=TRUE and has a value in pageviews field
+- SSL = primary scan status code of invalid_ssl_cert, ssl_protocol_error, ssl_version_cipher_mismatch
+- www-required = status_code = 4xx or 5xx (e.g. 399<x<600) AND www_status_code = 2xx
+- www-forbidden = initial_domain and initial_base are the same value AND www_status_code = 4xx or 5xx AND status_code=2xx.
+
 
 ------------
+
+## Details
 
 - 'In the Public Website Inventory' = Already exists in the combined [`us-government-website-inventory.csv` file](us-government-website-directory.csv), which is what provides the `omb_idea` source list in the Site Scanning data.
 - 'Is Executive Branch' = aligns with a domain indicated as belonging to an executive branch agency [in the dot-gov registry](https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv).
