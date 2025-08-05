@@ -15,6 +15,7 @@ Prior to launching a public website inventory process for all agencies, select a
 
 - Wait for an email from OFCIO containing the list of websites for you to upload to your agency's principal website.
 - Review the [reports](https://github.com/GSA/federal-website-directory/tree/main/reports) on GitHub that list potential candidates for addition or removal from your list, and make changes to your list as appropriate. (Optional: Review the report containing websites with scanning problems, and reach out to website owners as appropriate.) Document your feedback on these reports.
+- NOTE: In comparison to the "Low-Hanging Fruit" data exercise, the public website inventory should include all websites with Website Status (Agency Response) as "Active" (but NOT "Eliminated"). 
 - Follow the instructions on GitHub to upload the file to your agency's principal website, then email OFCIO to inform them that you are finished. Document your feedback on the instructions, as well as the process to update and upload the file.
 - Wait for an email from OFCIO informing you that the public website inventory has been updated based on uploads by the pilot program participants.
 - Review the public website inventory (filtered for your agency) for accuracy and helpfulness as part of your agency's overall efforts to manage its web footprint and respond to data calls. Document your feedback on the inventory's accuracy and helpfulness.
