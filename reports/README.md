@@ -29,8 +29,6 @@ This folder contains automatically generated reports that flag websites that age
 - 'Redirects' = Whether the `Initial Domain` resolves to a different final `Domain`, excluding the addition or removal of `www`.
 - 'Status Code' = HTTP Status Code, which is a generally good indicator of a site being live or down/dead.
 - 'DAP' = Participation in the Digital Analytics Program.
-- 
 
-
-
+For more details, see the [Site Scanning data dictionary](https://github.com/GSA/site-scanning-documentation/blob/main/data/Site_Scanning_Data_Dictionary.csv).  
 
