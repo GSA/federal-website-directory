@@ -93,5 +93,3 @@ This Directory is overseen by the [Site Scanning program](https://digital.gov/si
 ## Helpful Links
 - [Website inventory file made interative via Flat GitHub](https://flatgithub.com/GSA/federal-website-directory/blob/main/us-government-website-directory.csv)
 - [Website inventory file via GitHub.dev](https://github.dev/GSA/federal-website-directory/blob/main/us-government-website-directory.csv)
-
-- Testing some commit signing changes
