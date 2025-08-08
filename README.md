@@ -33,7 +33,7 @@ For the purpose of this inventory:
   - The website should be listed (and should load properly) without `www.`
   - The website should be listed without any page paths (such as “/program/page1” or "/index.html").
   - The website should be listed without a protocol (such as "https://"). 
-  - For example, “agency.gov” and “program.agency.gov” are proper acceptable URL structures for websites in this directory.
+  - For example, “agency.gov” and “program.agency.gov” are proper acceptable URL structures for websites in this inventory.
 - Even if a website requires a user to log in, in which sense it is not accessible to the general public, it could still be public-facing if it is intended to be used by general public (such as online accounts for government services or benefits).
 - Likewise, even if a website is accessible by the general public, it might not be intended for use by the general public (such as in the case of some beta or staging websites) and thus would not be public-facing.
 - A website that is primarily used by federal employees or contractors but that is accessible to the public may be public-facing if the website content is of significant public value (e.g., for transparency purposes). Agencies must make this determination on a case-by-case basis.
@@ -83,7 +83,7 @@ This model is [similar to other reporting requirements](https://github.com/GSA/s
 
 ## How to Get Help...
 
-This Directory is overseen by the [Site Scanning program](https://digital.gov/site-scanning) at GSA.  You can contact them anytime at [site-scanning@gsa.gov](mailto:site-scanning@gsa.gov)
+This inventory is overseen by the [Site Scanning program](https://digital.gov/site-scanning) at GSA.  You can contact them anytime at [site-scanning@gsa.gov](mailto:site-scanning@gsa.gov)
 
 ## Why is this inventory necessary?  
 
