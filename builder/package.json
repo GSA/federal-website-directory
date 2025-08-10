@@ -1,0 +1,14 @@
+{
+  "name": "federal-website-directory",
+  "version": "1.0.0",
+  "description": "Federal Webside Directory Harvester",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Aquino",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
