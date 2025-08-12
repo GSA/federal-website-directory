@@ -9,6 +9,12 @@
   "author": "Samuel Aquino",
   "license": "ISC",
   "devDependencies": {
+    "@types/dataframe-js": "^1.4.3",
+    "@types/node": "^24.2.1",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "dataframe-js": "^1.4.4"
   }
 }
