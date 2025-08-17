@@ -91,20 +91,17 @@ async function main() {
     const snapshotFilePath = '../snapshots/';
 
     // aggregate csvs
-    await (async () => {
-        try {
-            const dataFramedWebsiteInventories = await downloadAndLoad(inventoryFilePath, snapshotFilePath);
-            await combineDataFrames(dataFramedWebsiteInventories,
-                '../snapshots/us-gov-public-website-inventory.csv');
-            console.log('Download and storage complete.');
-        } catch (err) {
-            console.error(err);
-        }
-    })();
-
-    // save csv to required dir
-
-    return "Hi I'm main"
+    try {
+        const dataFramedWebsiteInventories = await downloadAndLoad(inventoryFilePath, snapshotFilePath);
+        await combineDataFrames(
+            dataFramedWebsiteInventories,
+            '../snapshots/us-gov-public-website-inventory.csv'
+        );
+        console.log('Download and storage complete.');
+    } catch (err) {
+        console.error(err);
+    }
 }
 
-main()
+
+main().catch(err => console.error(err));
