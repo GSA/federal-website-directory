@@ -1,5 +1,5 @@
 import DataFrame from 'dataframe-js';
-import csv from 'csv-parser';
+import csv = require('csv-parser');
 import * as fs from 'fs';
 
 interface WebsiteInventory {
@@ -44,25 +44,65 @@ function retrieveDomainFromUrl(url: string): string {
     return match ? match[1] : null;
 }
 
+async function combineDataFrames(
+    websideInventories: DataFrame[],
+    outputCsvPath: string
+) {
+    if (websideInventories.length === 0) {
+        console.warn('No DataFrames to combine.');
+        return;
+    }
+
+    const referenceDf = websideInventories[0]
+    const referenceHeaders: string[] = referenceDf.listColumns().slice(0, 4); // first 4 columns
+    const cleanedInventories: DataFrame[] = [];
+
+    for (const inventory of websideInventories) {
+        if (inventory.listColumns().length < 4) {
+            console.warn(`Skipping: less than 4 columns`);
+            continue;
+        }
+
+        const selectedInventories = inventory.select(referenceHeaders.join(','));
+
+        // Rename columns to match reference headers
+        selectedInventories.renameAll(referenceHeaders);
+
+        cleanedInventories.push(selectedInventories);
+    }
+
+    if (cleanedInventories.length === 0) {
+        console.warn('No valid DataFrames after cleaning.');
+        return;
+    }
+
+    let combinedDf = cleanedInventories[0];
+    for (let i = 1; i < cleanedInventories.length; i++) {
+        combinedDf = combinedDf.union(cleanedInventories[i]);
+    }
+
+    combinedDf.toCSV(true, outputCsvPath);
+    console.log(`Combined CSV saved to ${outputCsvPath}`);
+}
+
 async function main() {
     // load data
     const inventoryFilePath = './website_inventories.csv';
     const snapshotFilePath = '../snapshots/';
 
+    // aggregate csvs
     await (async () => {
         try {
             const dataFramedWebsiteInventories = await downloadAndLoad(inventoryFilePath, snapshotFilePath);
+            await combineDataFrames(dataFramedWebsiteInventories,
+                '../snapshots/us-gov-public-website-inventory.csv');
             console.log('Download and storage complete.');
         } catch (err) {
             console.error(err);
         }
     })();
 
-    // sort csv
-
     // save csv to required dir
-    
-    // money
 
     return "Hi I'm main"
 }
