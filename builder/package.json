@@ -2,7 +2,8 @@
   "name": "federal-website-directory",
   "version": "1.0.0",
   "description": "Federal Webside Directory Harvester",
-  "main": "index.js",
+  "main": "src/main.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "csv-parser": "^3.2.0",
-    "dataframe-js": "^1.4.4"
+    "dataframe-js": "^1.4.4",
+    "ts-node": "^10.9.2"
   }
 }

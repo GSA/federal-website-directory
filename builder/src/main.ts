@@ -1,36 +1,41 @@
-import DataFrame from 'dataframe-js';
-import csv = require('csv-parser');
+import {DataFrame} from 'dataframe-js';
+import csvParser from 'csv-parser';
 import * as fs from 'fs';
 
 interface WebsiteInventory {
-    name: string;
-    file_url: string;
+    agency: string;
+    website_inventory: string;
 }
 
-async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Promise<[DataFrame]> {
+async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Promise<[DataFrame] | void> {
     return new Promise((resolve, reject) => {
         const results: WebsiteInventory[] = [];
         const inventoryStream = fs.createReadStream(inventoryPath, {encoding: 'utf8'});
-        inventoryStream.pipe(csv())
+        inventoryStream
+            .pipe(csvParser())
             .on('data', async (row: WebsiteInventory) => {
-                if (row.file_url) results.push(row);
+                if (row.website_inventory) results.push(row);
             })
             .on('end', async () => {
                 try {
                     const promises = results.map(async (inventory) => {
-                        const domain = retrieveDomainFromUrl(inventory.file_url);
+                        const domain = retrieveDomainFromUrl(inventory.website_inventory);
                         const savePath = snapshotPath + domain + '.csv';
 
-                        const currentData = await DataFrame.fromCSV(inventory.file_url, true);
+                        console.log(`Downloading ${inventory.website_inventory} to ${savePath}`);
+                        const currentData = await DataFrame.fromCSV(inventory.website_inventory, true);
+                        console.log("\nCurrent data:" + currentData);
                         currentData.toCSV(true, savePath);
                         return currentData
                     });
 
                     const websiteInventoryDataFrames = await Promise.all(promises);
                     console.log('Finished parsing website inventory data.');
-                    return websiteInventoryDataFrames;
+                    // @ts-ignore
+                    resolve(websiteInventoryDataFrames);
                 } catch (err) {
-                    reject(err);
+                    console.warn('There was an issue loading the CSV from ${agency}: ${error.message}. Skipping...');
+                    resolve()
                 }
             })
             .on('error', () => {
@@ -40,21 +45,24 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
 }
 
 function retrieveDomainFromUrl(url: string): string {
-    const match = url.match(/^https?:\/\/(?:www\.)?([^\/]+)/i)
-    return match ? match[1] : null;
+    const match = url.match(/^https?:\/\/(?:www\.)?([^.\/]+)/i)
+    // @ts-ignore
+    return match ? match[1] : "empty";
 }
 
 async function combineDataFrames(
-    websideInventories: DataFrame[],
+    websideInventories: [DataFrame] | void,
     outputCsvPath: string
 ) {
-    if (websideInventories.length === 0) {
+    if (!websideInventories) {
         console.warn('No DataFrames to combine.');
         return;
     }
 
-    const referenceDf = websideInventories[0]
-    const referenceHeaders: string[] = referenceDf.listColumns().slice(0, 4); // first 4 columns
+    // const referenceDf = "Website,Agency,Bureau,Subcomponent"
+    const referenceHeaders = ["Website","Agency","Bureau","Subcomponent"]
+    const headers = referenceHeaders.join(', ')
+    // const referenceHeaders: string[] = referenceDf.listColumns().slice(0, 4); // first 4 columns
     const cleanedInventories: DataFrame[] = [];
 
     for (const inventory of websideInventories) {
@@ -63,7 +71,7 @@ async function combineDataFrames(
             continue;
         }
 
-        const selectedInventories = inventory.select(referenceHeaders.join(','));
+        const selectedInventories = inventory.select("Website", "Agency", "Bureau", "Subcomponent");
 
         // Rename columns to match reference headers
         selectedInventories.renameAll(referenceHeaders);
@@ -76,8 +84,10 @@ async function combineDataFrames(
         return;
     }
 
-    let combinedDf = cleanedInventories[0];
+    // @ts-ignore
+    let combinedDf: DataFrame = cleanedInventories[0];
     for (let i = 1; i < cleanedInventories.length; i++) {
+        // @ts-ignore
         combinedDf = combinedDf.union(cleanedInventories[i]);
     }
 
@@ -87,7 +97,7 @@ async function combineDataFrames(
 
 async function main() {
     // load data
-    const inventoryFilePath = './website_inventories.csv';
+    const inventoryFilePath = './test_website_inventories.csv';
     const snapshotFilePath = '../snapshots/';
 
     // aggregate csvs
