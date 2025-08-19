@@ -29,10 +29,11 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
                                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                                     'Accept': 'text/csv,text/plain,*/*'
                                 },
-                                responseType: 'text'
+                                responseType: 'text',
+                                maxRedirects: 5,
+                                validateStatus: (status) => status < 500,
                             });
                             if (!response.status || response.status !== 200) {
-                                console.warn(`${inventory.agency}'s response: ${response}`)
                                 console.warn(`There was an issue loading the CSV from ${inventory.agency}: ${inventory.website_inventory} (HTTP ${response.status}). Skipping...`);
                                 return null;
                             }
