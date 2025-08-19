@@ -10,12 +10,7 @@ interface WebsiteInventory {
     website_inventory: string;
 }
 
-interface SnapshotFile {
-    path: string;
-    filename: string;
-}
-
-async function downloadAndLoad(inventoryPath: string, snapshotPath: string) {
+async function downloadAllCsvFiles(inventoryPath: string, snapshotPath: string) {
     return new Promise<void>((resolve) => {
         const rows: WebsiteInventory[] = [];
         const inventoryStream = fs.createReadStream(inventoryPath, { encoding: 'utf8' });
@@ -112,15 +107,6 @@ function retrieveDomainFromUrl(url: string): string {
     return match ? match[1] : "empty";
 }
 
-function getCsvFiles(dir: string): string[] {
-    let snapshotPath = path.resolve(process.cwd(), dir)
-    const entries = fs.readdirSync(snapshotPath, { withFileTypes: true });
-    return entries
-        .filter(e => e.isFile() && path.extname(e.name).toLowerCase() === '.csv')
-        .map(e => path.join(snapshotPath, e.name));
-
-}
-
 async function combineDataFrames(
     websideInventoriesFilePaths: string[] | null,
     outputCsvPath: string
@@ -140,6 +126,15 @@ async function combineDataFrames(
     console.log(`Combined CSV saved to ${outputCsvPath}`);
 }
 
+function getCsvFiles(dir: string): string[] {
+    let snapshotPath = path.resolve(process.cwd(), dir)
+    const entries = fs.readdirSync(snapshotPath, { withFileTypes: true });
+    return entries
+        .filter(e => e.isFile() && path.extname(e.name).toLowerCase() === '.csv')
+        .map(e => path.join(snapshotPath, e.name));
+
+}
+
 async function main() {
     // load data
     const inventoryFilePath = './website_inventories.csv';
@@ -148,7 +143,7 @@ async function main() {
 
     // aggregate csvs
     try {
-        await downloadAndLoad(inventoryFilePath, snapshotFilePath);
+        await downloadAllCsvFiles(inventoryFilePath, snapshotFilePath);
         await combineDataFrames(
             getCsvFiles(snapshotFilePath),
             publishPath + 'us-gov-public-website-inventory.csv'
@@ -158,6 +153,5 @@ async function main() {
         console.error(error);
     }
 }
-
 
 main().catch(error => console.error(error));
