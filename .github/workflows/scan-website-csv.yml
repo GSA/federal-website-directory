@@ -17,14 +17,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '23.9.0'
+          cache: 'npm'
 
       - name: Install Dependencies
         run: |
           cd builder
           npm ci
 
+      - name: Compile TypeScript
+        run: npx tsc
+
       - name: Run Site Scanner
-        run: npx ts-node --esm ./src/main.ts
+        run: npx ts-node src/main.ts
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
