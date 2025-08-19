@@ -1,7 +1,8 @@
 import {DataFrame} from 'dataframe-js';
 import csvParser from 'csv-parser';
 import * as fs from 'fs';
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
+import axios from 'axios';
 import {Readable} from "node:stream";
 
 interface WebsiteInventory {
@@ -23,18 +24,19 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
                 try {
                     const promises = results.map(async (inventory) => {
                         try {
-                            const fetchHeader = {
+                            const response = await axios.get(inventory.website_inventory, {
                                 headers: {
                                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                                     'Accept': 'text/csv,text/plain,*/*'
-                                }};
-                            const response = await fetch(inventory.website_inventory, fetchHeader);
-                            if (!response.ok) {
+                                },
+                                responseType: 'text'
+                            });
+                            if (!response.status || response.status !== 200) {
                                 console.warn(`There was an issue loading the CSV from ${inventory.agency}: ${inventory.website_inventory} (HTTP ${response.status}). Skipping...`);
                                 return null;
                             }
 
-                            const currentCsvText = await response.text();
+                            const currentCsvText = await response.data;
                             const currentCsvRows: any[] = [];
 
                             await new Promise<void>((res) => {
