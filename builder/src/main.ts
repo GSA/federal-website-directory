@@ -32,8 +32,8 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
                                 responseType: 'text'
                             });
                             if (!response.status || response.status !== 200) {
+                                console.warn(`${inventory.agency}'s response: ${response}`)
                                 console.warn(`There was an issue loading the CSV from ${inventory.agency}: ${inventory.website_inventory} (HTTP ${response.status}). Skipping...`);
-                                console.warn(`${inventory.agency}'s headers: ${response.headers}`)
                                 return null;
                             }
 
