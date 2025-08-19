@@ -9,43 +9,6 @@ interface WebsiteInventory {
     website_inventory: string;
 }
 
-async function download(inventoryPath: string, snapshotPath: string): Promise<[DataFrame] | null> {
-    return new Promise((resolve, reject) => {
-        const results: WebsiteInventory[] = [];
-        const inventoryStream = fs.createReadStream(inventoryPath, {encoding: 'utf8'});
-        inventoryStream
-            .pipe(csvParser())
-            .on('data', async (row: WebsiteInventory) => {
-                if (row.website_inventory) results.push(row);
-            })
-            .on('end', async () => {
-                try {
-                    const promises = results.map(async (inventory) => {
-                        const domain = retrieveDomainFromUrl(inventory.website_inventory);
-                        const savePath = snapshotPath + domain + '.csv';
-
-                        console.log(`Downloading ${inventory.website_inventory} to ${savePath}`);
-                        const currentData = await DataFrame.fromCSV(inventory.website_inventory, true);
-                        console.log("\nCurrent data:" + currentData);
-                        currentData.toCSV(true, savePath);
-                        return currentData
-                    });
-
-                    const websiteInventoryDataFrames = await Promise.all(promises);
-                    console.log('Finished parsing website inventory data.');
-                    // @ts-ignore
-                    resolve(websiteInventoryDataFrames);
-                } catch (err) {
-                    console.warn('There was an issue loading the CSV from ${agency}: ${error.message}. Skipping...');
-                    resolve(null);
-                }
-            })
-            .on('error', () => {
-                console.warn('There was an issue loading the CSV from ${agency}: ${error.message}. Skipping...');
-            })
-    });
-}
-
 async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Promise<DataFrame[] | null> {
     return new Promise((resolve, reject) => {
         const results: WebsiteInventory[] = [];
