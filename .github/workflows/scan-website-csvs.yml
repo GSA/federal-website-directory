@@ -1,0 +1,31 @@
+name: Build and Scan Websites
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'
+
+jobs:
+  scanning:
+    name: Checkout, Build and Run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '23.9.0'
+
+      - name: Install Dependencies
+        run: |
+          cd builder
+          npm install
+
+      - name: Run Site Scanner
+        run: npx ts-node main.ts
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Site scanned US Government Website Directories
