@@ -31,6 +31,7 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
                                 },
                                 responseType: 'text'
                             });
+                            console.log(response.status, response.headers)
                             if (!response.status || response.status !== 200) {
                                 console.warn(`There was an issue loading the CSV from ${inventory.agency}: ${inventory.website_inventory} (HTTP ${response.status}). Skipping...`);
                                 return null;
@@ -45,7 +46,7 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
                                     .on('data', (r) => currentCsvRows.push(r))
                                     .on('end', () => res())
                                     .on('error', (error) => {
-                                        console.warn(`Skipping ${inventory.website_inventory} due to parse error: ${error.message}`);
+                                        console.warn(`Skipping ${inventory.agency} due to parse error: ${error.message}`);
                                         res();
                                     });
                             });
@@ -54,7 +55,7 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
 
                             const currentData = new DataFrame(currentCsvRows);
                             if (currentData.listColumns().length < 4) {
-                                console.warn(`Skipping: less than 4 columns`);
+                                console.warn(`Skipping ${inventory.agency}: less than 4 columns`);
                                 return null;
                             }
                             let selectedInventories;
