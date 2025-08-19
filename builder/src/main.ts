@@ -116,7 +116,6 @@ async function main() {
     // load data
     const inventoryFilePath = './website_inventories.csv';
     const snapshotFilePath = '../snapshots/';
-    console.log(`Starting with ${inventoryFilePath}`);
 
     // aggregate csvs
     try {
