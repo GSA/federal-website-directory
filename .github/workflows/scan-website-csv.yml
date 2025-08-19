@@ -21,7 +21,7 @@ jobs:
       - name: Install Dependencies
         run: |
           cd builder
-          npm install
+          npm ci
 
       - name: Run Site Scanner
         run: npx ts-node --esm ./src/main.ts
