@@ -52,7 +52,7 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
                             }
                             let selectedInventories;
                             try {
-                                selectedInventories = currentData.select("Website", "Agency", "Bureau", "Subcomponent");
+                                selectedInventories = currentData.select("Website", "Agency", "Bureau", "Office");
                             } catch (error: any) {
                                 console.warn(`Skipping ${inventory.agency} due to missing valid headers: ${error?.message ?? error}`);
                                 return null;
@@ -114,7 +114,7 @@ async function combineDataFrames(
 
 async function main() {
     // load data
-    const inventoryFilePath = './test_website_inventories.csv';
+    const inventoryFilePath = './website_inventories.csv';
     const snapshotFilePath = '../snapshots/';
 
     // aggregate csvs
@@ -122,7 +122,7 @@ async function main() {
         const dataFramedWebsiteInventories = await downloadAndLoad(inventoryFilePath, snapshotFilePath);
         await combineDataFrames(
             dataFramedWebsiteInventories,
-            '../snapshots/us-gov-public-website-inventory.csv'
+            snapshotFilePath + 'us-gov-public-website-inventory.csv'
         );
         console.log('Download and storage complete.');
     } catch (error) {
