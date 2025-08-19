@@ -17,6 +17,7 @@
   "dependencies": {
     "csv-parser": "^3.2.0",
     "dataframe-js": "^1.4.4",
+    "node-fetch": "^3.3.2",
     "ts-node": "^10.9.2"
   }
 }
