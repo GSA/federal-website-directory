@@ -25,7 +25,7 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
                         try {
                             const fetchHeader = {
                                 headers: {
-                                    'User-Agent': 'Mozilla/5.0',
+                                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                                     'Accept': 'text/csv,text/plain,*/*'
                                 }};
                             const response = await fetch(inventory.website_inventory, fetchHeader);
