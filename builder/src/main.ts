@@ -23,7 +23,12 @@ async function downloadAndLoad(inventoryPath: string, snapshotPath: string): Pro
                 try {
                     const promises = results.map(async (inventory) => {
                         try {
-                            const response = await fetch(inventory.website_inventory);
+                            const fetchHeader = {
+                                headers: {
+                                    'User-Agent': 'Mozilla/5.0',
+                                    'Accept': 'text/csv,text/plain,*/*'
+                                }};
+                            const response = await fetch(inventory.website_inventory, fetchHeader);
                             if (!response.ok) {
                                 console.warn(`There was an issue loading the CSV from ${inventory.agency}: ${inventory.website_inventory} (HTTP ${response.status}). Skipping...`);
                                 return null;
