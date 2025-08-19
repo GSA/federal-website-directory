@@ -24,7 +24,7 @@ jobs:
           npm install
 
       - name: Run Site Scanner
-        run: npx ts-node main.ts
+        run: npx ts-node --esm ./src/main.ts
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
