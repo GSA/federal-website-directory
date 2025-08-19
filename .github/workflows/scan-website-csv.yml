@@ -19,6 +19,9 @@ jobs:
           node-version: '23.9.0'
           cache: 'npm'
 
+      - name: Test using curl on commerce csv
+        run: curl -L -o /snapshots/commerce.csv https://commerce.gov/websites.csv
+
       - name: Install Dependencies
         run: |
           cd builder
