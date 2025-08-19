@@ -16,9 +16,10 @@
   },
   "dependencies": {
     "axios": "^1.11.0",
+    "axios-cookiejar-support": "^6.0.4",
     "csv-parser": "^3.2.0",
     "dataframe-js": "^1.4.4",
-    "node-fetch": "^3.3.2",
+    "tough-cookie": "^5.1.2",
     "ts-node": "^10.9.2"
   }
 }

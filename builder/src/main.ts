@@ -4,6 +4,8 @@ import * as fs from 'fs';
 import axios from 'axios';
 import {Readable} from "node:stream";
 import * as path from 'path';
+import { wrapper } from 'axios-cookiejar-support';
+import { CookieJar } from 'tough-cookie';
 
 interface WebsiteInventory {
     agency: string;
@@ -28,8 +30,11 @@ async function downloadAllCsvFiles(inventoryPath: string, snapshotPath: string) 
                         const domain = retrieveDomainFromUrl(url);
                         const savePath = `${snapshotPath}${domain}.csv`;
 
-                        let df;
-                        const response = await axios.get(inventory.website_inventory, {
+                        const jar = new CookieJar();
+                        const client = wrapper(axios.create());
+                        const response = await client.get(inventory.website_inventory, {
+                            jar,
+                            withCredentials: true,
                             headers: {
                                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                                 'Accept': 'text/csv,text/plain,*/*'
