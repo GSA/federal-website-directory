@@ -20,7 +20,7 @@ jobs:
           cache: 'npm'
 
       - name: Test using curl on commerce csv
-        run: curl -L -o /snapshots/commerce.csv https://commerce.gov/websites.csv
+        run: curl -L -o ./snapshots/commerce.csv https://commerce.gov/websites.csv
 
       - name: Install Dependencies
         run: |
