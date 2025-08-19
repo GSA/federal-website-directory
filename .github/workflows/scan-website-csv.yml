@@ -23,11 +23,12 @@ jobs:
         run: |
           cd builder
           pwd
-          npm ci
+          ls
+          
 
-      - name: Run Site Scanner
-        run: npx ts-node src/main.ts
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Site scanned US Government Website Directories
+#      - name: Run Site Scanner
+#        run: npx ts-node src/main.ts
+#
+#      - uses: stefanzweifel/git-auto-commit-action@v4
+#        with:
+#          commit_message: Site scanned US Government Website Directories
