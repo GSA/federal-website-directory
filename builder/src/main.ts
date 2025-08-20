@@ -4,8 +4,6 @@ import * as fs from 'fs';
 import axios from 'axios';
 import {Readable} from "node:stream";
 import * as path from 'path';
-import { wrapper } from 'axios-cookiejar-support';
-import { CookieJar } from 'tough-cookie';
 
 interface WebsiteInventory {
     agency: string;
@@ -30,18 +28,10 @@ async function downloadAllCsvFiles(inventoryPath: string, snapshotPath: string) 
                         const domain = retrieveDomainFromUrl(url);
                         const savePath = `${snapshotPath}${domain}.csv`;
 
-                        const jar = new CookieJar();
-                        const client = wrapper(axios.create());
-                        const response = await client.get(inventory.website_inventory, {
-                            jar,
+                        const response = await axios.get(inventory.website_inventory, {
                             withCredentials: true,
-                            headers: {
-                                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36',
-                                'Accept': 'text/csv,text/plain,*/*'
-                            },
                             responseType: 'text',
                             maxRedirects: 5,
-                            validateStatus: (status) => status < 500,
                         });
                         if (!response.status || response.status !== 200) {
                             console.warn(`There was an issue loading the CSV from ${inventory.agency}: ${inventory.website_inventory} (HTTP ${response.status}). Skipping...`);
