@@ -65,26 +65,11 @@ async function downloadAllCsvFiles(inventoryPath: string, snapshotPath: string) 
                         if (currentCsvRows.length === 0) return null;
 
                         const currentData = new DataFrame(currentCsvRows);
-                        if (currentData.listColumns().length < 4) {
-                            console.warn(`Skipping ${inventory.agency}: less than 4 columns`);
-                            return null;
-                        }
                         let selectedInventories;
-                        try {
-                            selectedInventories = currentData.select("Website", "Agency", "Bureau", "Office");
-                        } catch (error: any) {
-                            console.warn(`Skipping ${inventory.agency} due to missing valid headers: ${error?.message ?? error}`);
-                            return null;
-                        }
-                        try {
-                            selectedInventories.toCSV(true, savePath);
-                        } catch (error: any) {
-                            console.warn(`Skipping due to save error (${savePath}): ${error?.message ?? error}`);
-                            resolve();
-                        }
-
+                        selectedInventories = currentData.select("Website", "Agency", "Bureau", "Office");
+                        selectedInventories.toCSV(true, savePath);
                     } catch (error: any) {
-                        console.warn(`Skipping due to unexpected error (${url}): ${error?.message ?? error}`);
+                        console.warn(`Skipping ${inventory.agency} due to errors: ${error?.message ?? error}`);
                         resolve();
                     }
                 });
