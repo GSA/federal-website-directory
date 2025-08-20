@@ -144,14 +144,13 @@ async function main() {
     // load data
     const inventoryFilePath = './website_inventories.csv';
     const snapshotFilePath = '../snapshots/';
-    const publishPath = '../publish/';
 
     // aggregate csvs
     try {
         await downloadAllCsvFiles(inventoryFilePath, snapshotFilePath);
         await combineDataFrames(
             getCsvFiles(snapshotFilePath),
-            publishPath + 'us-gov-public-website-inventory.csv'
+            'us-gov-public-website-inventory.csv'
         );
         console.log('Download and storage complete.');
     } catch (error) {
