@@ -100,7 +100,7 @@ async function combineDataFrames(
     for (let i = 0; i < websideInventoriesFilePaths.length; i++) {
         console.log(`Loading ${websideInventoriesFilePaths[i]}`);
         const currentDf = await DataFrame.fromCSV(websideInventoriesFilePaths[i]);
-        combinedDf = combinedDf.union(currentDf);
+        combinedDf = combinedDf.union(currentDf.select("Website", "Agency", "Bureau", "Office"));
     }
     combinedDf.toCSV(true, outputCsvPath);
     console.log(`Combined CSV saved to ${outputCsvPath}`);
